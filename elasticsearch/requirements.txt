@@ -1,0 +1,10 @@
+django
+djangorestframework
+langchain
+langsmith
+langchain_google_genai
+langchain-elasticsearch
+elasticsearch
+rank_bm25
+django-cors-headers
+langchain_community

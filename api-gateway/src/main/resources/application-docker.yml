@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    config:
+      uri: http://config:8888
+      searchPaths:
+        - ${application}/default
+        - ${application}/docker
+      username: ${CONFIG_USERNAME:config}
+      password: ${CONFIG_PASSWORD:password}
