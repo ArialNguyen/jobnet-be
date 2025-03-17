@@ -51,6 +51,7 @@ public class Post {
     public static class Profession {
         private String id;
         private String name;
+        private Integer totalPosts;
     }
 
     @NoArgsConstructor

@@ -34,7 +34,7 @@ public class RegistrationService implements IRegistrationService {
             request.getName(),
             verificationOTP.getToken()
         );
-        kafkaTemplate.send("user-regis  tration", emailVerification);
+        kafkaTemplate.send("user-registration", emailVerification);
 
         log.info(messageUtil.getMessage("success.registration.jobSeeker", request));
         return this.getUserResponse(verificationOTP.getUser());

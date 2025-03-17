@@ -16,7 +16,7 @@ from langchain_google_genai import GoogleGenerativeAI, GoogleGenerativeAIEmbeddi
 
 
 class PostApiView(APIView):
-    elastic_url = "https://my-elasticsearch-project-ce2d6d.es.ap-southeast-1.aws.elastic.cloud:443"
+    elastic_url = "http://localhost:9200" or "https://my-elasticsearch-project-ce2d6d.es.ap-southeast-1.aws.elastic.cloud:443"
     elastic_index = "posts"
     elastic_client = Elasticsearch(elastic_url, api_key=settings.ELASTIC_API_KEY)
     llm = GoogleGenerativeAI(

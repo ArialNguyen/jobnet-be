@@ -15,7 +15,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/duycoiz1204/jobnet-ipj-config-server.git
+          uri: https://github.com/ArialNguyen/jobnet-config-server.git
           username: ${CONFIG_GIT_USERNAME}
           password: ${CONFIG_GIT_PASSWORD}
           clone-on-start: true

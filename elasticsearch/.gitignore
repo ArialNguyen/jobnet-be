@@ -1,5 +1,5 @@
 venv/
-
+postenv/
 __pycache__/
 
 /post/data

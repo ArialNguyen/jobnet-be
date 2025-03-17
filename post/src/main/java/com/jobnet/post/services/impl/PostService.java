@@ -85,7 +85,7 @@ public class PostService implements IPostService {
 		if (!StringUtils.isBlank(request.getRecruiterId()))
 			query.addCriteria(Criteria.where("recruiterId").is(request.getRecruiterId()));
 		if (!StringUtils.isBlank(request.getBusinessId()))
-			query.addCriteria(Criteria.where("businessId").is(request.getBusinessId()));
+			query.addCriteria(Criteria.where("business._id").is(request.getBusinessId()));
 		if (request.getActiveStatuses() != null || request.getActiveStatus() != null) {
 			Optional<Criteria> optionalCriteria = Optional.of(Criteria.where("activeStatus"))
 					.map(criteria -> {
@@ -156,6 +156,7 @@ public class PostService implements IPostService {
 								.builder()
 								.id(profession.getId())
 								.name(profession.getName())
+								.totalPosts(profession.getTotalPosts())
 								.build());
 		_post.setLevel(level);
 		_post.setBenefits(benefits);
@@ -337,6 +338,7 @@ public class PostService implements IPostService {
 		return Post.Profession.builder()
 				   .id(professionId)
 				   .name(profession.getName())
+				   .totalPosts(profession.getTotalPosts())
 				   .build();
 	}
 

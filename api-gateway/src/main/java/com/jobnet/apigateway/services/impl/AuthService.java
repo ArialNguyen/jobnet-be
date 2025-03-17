@@ -9,6 +9,7 @@ import com.jobnet.apigateway.utils.JwtUtils;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.core.userdetails.ReactiveUserDetailsService;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -25,7 +26,6 @@ public class AuthService implements IAuthService {
     private final ReactiveUserDetailsService userDetailsService;
     private final PasswordEncoder passwordEncoder;
     private final JwtUtils jwtUtils;
-
     @Override
     public Mono<AuthResponse> login(AuthRequest authRequest) {
         return userDetailsService.findByUsername(authRequest.getEmail())

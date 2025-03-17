@@ -48,7 +48,7 @@ public class S3Service {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }
+    }   
 
     public void deleteObject(String key) {
         DeleteObjectRequest deleteObjectRequest = DeleteObjectRequest.builder()
